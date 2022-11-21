@@ -13,7 +13,7 @@ const Property = ({property: {coverPhoto, price, rentFrequency, rooms, title, ba
       <Link href={`/property/${externalID}`} passHref>
         <div className='flex flex-col items '>
           <div className='m-h-[200px] '>
-            <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} />
+            <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} alt={title} />
           </div>
           <p className='text-lg'>
             {title.length > 30 ? `${title.substring(0,30)}...` : title}
@@ -28,7 +28,7 @@ const Property = ({property: {coverPhoto, price, rentFrequency, rooms, title, ba
               </p>
             </div>
             <div>
-              <Image className='rounded-full ' src={agency?.logo?.url} width={50} height={50}/>
+              <Image className='rounded-full ' src={agency?.logo?.url} width={50} height={50} alt={title}/>
             </div>
           </div>
           <div className='flex items-center p-1 justify-between w-[250px] text-blue-400'>
